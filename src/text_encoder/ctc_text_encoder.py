@@ -78,7 +78,7 @@ class CTCTextEncoder:
         if use_lm:
             if isinstance(logits, torch.Tensor):
                 logits = logits.detach().cpu().numpy()
-            return self.decoder_lm.decode(logits, 10).lower()
+            return self.decoder_lm.decode(logits, 500).lower()
         else:
             if isinstance(probs, torch.Tensor):
                 probs = probs.detach().cpu().numpy()
